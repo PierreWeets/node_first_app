@@ -1,11 +1,1 @@
-{
-  "name": "node_first_app",
-  "version": "1.0.0",
-  "description": "first app to manage users",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
-}
+[{"email":"example@example.com","username":"Foo"},{"email":"test2@example.com","username":"newnewtest2"}]
