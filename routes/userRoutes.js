@@ -10,12 +10,8 @@ module.exports = function(app,file){ //'module.exports' makes this next code acc
     app.use(bodyParser.json());
 
     // the request sender uses, in the URL, the method 'GET' with paramater '/users' ex: GET http://localhost:5000/users
-    // launches a get procedure when on active server the URL = '[active server]/5000/users'
-    app.get("/users", (req, res) => { // |-> URL "localhost:5000/users" 
-    // let str = JSON.stringify(res);
-    // console.log("res : "  +str); 
-    //console.log("res : " + JSON.stringify(res, null, 4));
-
+    app.get("/users", (req, res) => { // launches a GET procedure when URL ex: 'GET http://localhost:5000/users'
+    
         console.log("fetching all users");
         
         // reading jsonfile "./DB/users.json"
@@ -77,10 +73,11 @@ module.exports = function(app,file){ //'module.exports' makes this next code acc
         });
     });
 
+	//update an existing record in json file 
     // the request sender uses, in the URL, the method 'PUT'  ex: PUT http://localhost:5000/user?email=test2@example.com
     app.put("/user", (req, res) => {
         let user;
-        let username = req.body.username; // |-> in the URL, to '/user'
+        let username = req.body.username; // |-> in the body, the key 'username'
         let email = req.query.email; // |-> in the URL, to '?email=test2@example.com'
         
         jsonfile.readFile(file, function(err, content){
@@ -101,7 +98,7 @@ module.exports = function(app,file){ //'module.exports' makes this next code acc
             });
     
         });
-        //send the user object back to the request sender
+        //send the added user object, back to the request sender
         res.send(user);
     }); 
 
@@ -122,7 +119,7 @@ module.exports = function(app,file){ //'module.exports' makes this next code acc
                 user = content[i];
             }
           }
-          //send the retrieved user object back to the request sender
+          //send the retrieved user object, back to the request sender
           res.send(user);
         });
     });

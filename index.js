@@ -8,7 +8,7 @@ const express = require("express");
 const app = express();
 const file = "./DB/users.json";
 
-//gives the reference about the express object TO the module userRoutes.js that has to be included in the code.
+//gives the express object reference & the file reference TO the module 'userRoutes.js' required into the code of index.js
 require("./routes/userRoutes")(app, file); 
 
 // port on which to run the server
@@ -16,5 +16,5 @@ const PORT = 5000;
 
 // listen on the port
 app.listen(PORT, () => {
-  console.log(`Server running`);
+  console.log(`Server running on Port ${PORT}`);
 });
