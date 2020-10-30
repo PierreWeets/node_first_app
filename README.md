@@ -5,21 +5,21 @@
 install [Postman](www.postman.com)
 
 # Launch application
-In the directory containing the code , launch app :&nbsp;
+In the directory containing the code , launch app :  
 'node index.js'
 
 # use of browser
-With Postman : URL = 'GET http://localhost:5000/users'   
+With Postman : URL = 'GET http://localhost:5000/users':   
 reads the content of the file ./DB/users.json
 
-With Postman : URL = 'POST http://localhost:5000/users/new' & body = { "email":"test2@example.com","username": "test2"}  
+With Postman : URL = 'POST http://localhost:5000/users/new' & body = { "email":"test2@example.com","username": "test2"}:  
 From the body content , writes a new record into the file ./DB/users.json
 
-With Postman : URL = 'POST http://localhost:5000/users/delete' & body = {"email":"test2@example.com"}  
+With Postman : URL = 'POST http://localhost:5000/users/delete' & body = {"email":"test2@example.com"}:  
 From the body content, deletes the record, with email="test2@example.com", in the file ./DB/users.json
 
-With Postman : URL = 'PUT http://localhost:5000/user?email=test2@example.com' & body = {"username":"test2"}  
+With Postman : URL = 'PUT http://localhost:5000/user?email=test2@example.com' & body = {"username":"test2"}:  
 From the body content, updates the record, where email="test2@example.com", with username="test2"
 
-With Postman : URL = 'GET http://localhost:5000/user?email=test2@example.com'  
+With Postman : URL = 'GET http://localhost:5000/user?email=test2@example.com':  
 gets the record, with email="test2@example.com", from the file ./DB/users.json
